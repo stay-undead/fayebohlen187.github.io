@@ -75,6 +75,11 @@ body {
     flex-direction: column;
   }
 
+  .sidebar a.active {
+  background-color: #ccc;
+  font-weight: bold;
+}
+
   .sidebar {
     width: 100%;
     display: flex;
@@ -85,3 +90,5 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   }
 }
+
+
