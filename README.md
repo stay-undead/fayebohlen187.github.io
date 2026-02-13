@@ -18,16 +18,10 @@
     </aside>
     <main class="content">
       <!-- Main page content goes here -->
-      <h1>Main Content</h1>
-      <p>This is the main content area that will scroll independently if needed.</p>
+            <img src="Images/Bohlen.Riki_NFLPoster2.png" width="" height="576"> <img src="Images/Bohlen.Riki_NFLPoster2.png" width="448" height="576">
+            <img src="Images/Bohlen.Riki_NFLPoster2.png" width="448" height="576">
+      <h1>Main Works</h1>
     </main>
   </div>
-</body>
-<body>
-    <!-- Your visible content goes here -->
-    Hello, World!
-    <p>This is my first paragraph.</p>
-    <img src="Images/Bohlen.Riki_NFLPoster2.png" width="" height="576"> <img src="Images/Bohlen.Riki_NFLPoster2.png" width="448" height="576">
-    <img src="Images/Bohlen.Riki_NFLPoster2.png" width="448" height="576">
 </body>
 </html>
