@@ -17,10 +17,10 @@
       <a href="#contact">Contact</a>
     </aside>
     <main class="content">
-      <!-- Main page content goes here -->
+      <!-- Main page content goes here -->      
+      <h1>Main Works</h1>
             <img src="Images/Bohlen.Riki_NFLPoster2.png" width="" height="576"> <img src="Images/Bohlen.Riki_NFLPoster2.png" width="448" height="576">
             <img src="Images/Bohlen.Riki_NFLPoster2.png" width="448" height="576">
-      <h1>Main Works</h1>
     </main>
   </div>
 </body>
