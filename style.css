@@ -4,34 +4,38 @@ body {
 }
 
 .container {
-  display: flex; /* Positions children (sidebar and content) side-by-side */
-  min-height: 100vh; /* Ensures container takes at least the full viewport height */
+  display: flex;
+  min-height: 100vh;
 }
 
 .sidebar {
-  width: 200px; /* Set a fixed width for the sidebar */
+  width: 220px;
   background-color: #f1f1f1;
   padding: 20px;
-  /* Optional: make it sticky or fixed if desired */
-  /* position: fixed; height: 100%; overflow: auto; */
 }
 
 .sidebar a {
-  display: block; /* Makes links take the full width for better clicking area */
+  display: block;
   color: black;
   padding: 10px 0;
-  text-decoration: none; /* Removes default underline */
+  text-decoration: none;
 }
 
 .sidebar a:hover {
-  background-color: #ddd; /* Hover effect */
+  background-color: #ddd;
 }
 
 .content {
-  flex: 1; /* Allows the content area to grow and fill the remaining space */
-  padding: 20px;
-  /* If sidebar is fixed, add margin-left to prevent content overlap */
-  /* margin-left: 240px; */
+  flex: 1;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.content img {
+  width: 100%;
+  height: auto;
 }
 
 .content img {
