@@ -45,7 +45,8 @@ body {
   /* Image grid */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
+  row-gap: 8px;     /* space between title and images */
+  column-gap: 24px; /* space between images */
 }
 
 /* ===== FIX: Title spans full row ===== */
