@@ -51,7 +51,7 @@ body {
 /* ===== FIX: Title spans full row ===== */
 .content h1 {
   grid-column: 1 / -1;
-  margin-bottom: 8px;/* remove top margin, keep small bottom gap */
+  margin-bottom: 1px;/* remove top margin, keep small bottom gap */
 }
 
 /* ===== Image Wrapper ===== */
