@@ -46,9 +46,14 @@ body {
 }
 
 .gallery {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
+}
+
+.gallery img {
+  max-width: 100%;
 }
 
 /* ===== Page Title ===== */
@@ -59,6 +64,10 @@ body {
 
 /* ===== Image Wrapper ===== */
 .img-wrap {
+  width: 100%;
+  max-width: none;
+  grid-column: auto !important;
+
   height: 340px;
   overflow: hidden;
   border-radius: 10px;
