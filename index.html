@@ -19,113 +19,66 @@
   <main class="content">
     <h1>Main Works</h1>
 
-    <div class="img-wrap">
-      <img src="Images/Bohlen.Riki_NFLPoster.png">
-    </div>
-
-    <div class="img-wrap">
-      <img src="Images/Bohlen.Riki_NFLPoster2.png">
-    </div>
-
-    <div class="img-wrap">
-      <img src="Images/Costume Contest.jpg">
-    </div>
-
-    <div class="img-wrap">
-      <img src="Images/FLOOF Opening Social.jpg">
-    </div>
-
-      <div class="img-wrap">
-      <img src="Images/Dance Club Meeting Poster.png>
-    </div>
-
-    <div class="img-wrap">
-      <img src="Images/Dance Club Poster.png">
-    </div>
-
-    <div class="img-wrap">
-      <img src="Images/FLOOF Zine Cover.png">
-    </div>
-    
-    <div class="img-wrap">
-      <img src="Images/Blueberry Picking Flyer.jpg">
-    </div>
-    
-    <div class="img-wrap">
-      <img src="Images/FF Flyer Square.png">
-    </div>
-
-    <div class="img-wrap">
-      <img src="Images/FLOOF Karaoke Sq.png">
-    </div>
-    
-    <div class="img-wrap">
-      <img src="Images/FLOOF CN Square.png">
-    </div>
-
-    <div class="img-wrap">
-      <img src="Images/FLOOF Kicoff Insta.png">
-    </div>
-    
-    <div class="img-wrap">
-      <img src="Images/Fursona Factory Flyer.png">
-    </div>
-
-    <div class="img-wrap">
-      <img src="Images/FLOOF Karaoke.png">
-    </div>
-    
-    <div class="img-wrap">
-      <img src="Images/FLOOF CN Poster.png">
-    </div>
-
-    <div class="img-wrap">
-      <img src="Images/FLOOF Semester Kickoff.png">
-    </div>
-
-      <div class="img-wrap">
-      <img src="Images/FLOOF Skate Nite.png">
-    </div>
-
-    <div class="img-wrap">
-      <img src="Images/Trading Den Fall.png">
-    </div>
-    
-    <div class="img-wrap">
-      <img src="Images/FLOOF Game Night.png">
-    </div>
-
-    <div class="img-wrap">
-      <img src="Images/FLOOF Trivia.png">
-    </div>
-
+    <!-- Gallery injected by JS -->
+    <div class="gallery" id="gallery"></div>
   </main>
 </div>
 
-<!-- Lightbox Modal -->
+<!-- ===== Lightbox Modal ===== -->
 <div id="lightbox" class="lightbox">
   <span class="lightbox-close">&times;</span>
-  <img class="lightbox-img" src="">
+  <img class="lightbox-img" src="" alt="">
 </div>
 
-<!-- Lightbox Script -->
+<!-- ===== Gallery + Lightbox Script ===== -->
 <script>
+  const images = [
+    "Bohlen.Riki_NFLPoster.png",
+    "Bohlen.Riki_NFLPoster2.png",
+    "Costume Contest.jpg",
+    "FLOOF Opening Social.jpg",
+    "Dance Club Meeting Poster.png",
+    "Dance Club Poster.png",
+    "FLOOF Zine Cover.png",
+    "Blueberry Picking Flyer.jpg",
+    "FF Flyer Square.png",
+    "FLOOF Karaoke Sq.png",
+    "FLOOF CN Square.png",
+    "FLOOF Kicoff Insta.png",
+    "Fursona Factory Flyer.png",
+    "FLOOF Karaoke.png",
+    "FLOOF CN Poster.png",
+    "FLOOF Semester Kickoff.png",
+    "FLOOF Skate Nite.png",
+    "Trading Den Fall.png",
+    "FLOOF Game Night.png",
+    "FLOOF Trivia.png"
+  ];
+
+  const gallery = document.getElementById("gallery");
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.querySelector(".lightbox-img");
   const closeBtn = document.querySelector(".lightbox-close");
 
-  document.querySelectorAll(".img-wrap img").forEach(img => {
+  images.forEach(file => {
+    const img = document.createElement("img");
+    img.src = `Images/${file}`;
+    img.loading = "lazy";
+    img.alt = file.replace(/[-_]/g, " ").split(".")[0];
+
     img.addEventListener("click", () => {
       lightboxImg.src = img.src;
       lightbox.style.display = "flex";
     });
+
+    gallery.appendChild(img);
   });
 
   closeBtn.addEventListener("click", () => {
     lightbox.style.display = "none";
   });
 
-  lightbox.addEventListener("click", (e) => {
+  lightbox.addEventListener("click", e => {
     if (e.target !== lightboxImg) {
       lightbox.style.display = "none";
     }
