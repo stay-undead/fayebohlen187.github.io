@@ -56,19 +56,23 @@
   const lightboxImg = document.querySelector(".lightbox-img");
   const closeBtn = document.querySelector(".lightbox-close");
 
-  images.forEach(file => {
-    const img = document.createElement("img");
-    img.src = `Images/${file}`;
-    img.loading = "lazy";
-    img.alt = file.replace(/[-_]/g, " ").split(".")[0];
+images.forEach(file => {
+  const wrap = document.createElement("div");
+  wrap.className = "img-wrap";
 
-    img.addEventListener("click", () => {
-      lightboxImg.src = img.src;
-      lightbox.style.display = "flex";
-    });
+  const img = document.createElement("img");
+  img.src = `Images/${file}`;
+  img.loading = "lazy";
+  img.alt = file.replace(/[-_]/g, " ").split(".")[0];
 
-    gallery.appendChild(img);
+  img.addEventListener("click", () => {
+    lightboxImg.src = img.src;
+    lightbox.style.display = "flex";
   });
+
+  wrap.appendChild(img);
+  gallery.appendChild(wrap);
+});
 
   closeBtn.addEventListener("click", () => {
     lightbox.style.display = "none";
