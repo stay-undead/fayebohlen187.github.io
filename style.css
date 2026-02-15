@@ -73,10 +73,11 @@ p, span, li {
 .img-wrap {
   height: 340px;
   border-radius: 12px;
-  background-color: #1e1e1e;
-  border: 1px solid #2a2a2a;
-  overflow: hidden;
 
+  background-color: transparent;   
+  border: none;                 
+
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
