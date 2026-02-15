@@ -3,59 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Logos & Graphics</title>
+  <title>Portfolio | Main</title>
   <link href="./style.css" rel="stylesheet">
 </head>
+
 <body>
 
 <div class="container">
   <aside class="sidebar">
-    <a href="index.html">Main</a>
-    <a href="logos.html" class="active">Logos & Graphics</a>
+    <a href="index.html" class="active">Main</a>
+    <a href="logos.html">Logos & Graphics</a>
     <a href="contact.html">Contact</a>
   </aside>
 
-<main class="content">
-    <h1>Logos & Graphics</h1>
+  <main class="content">
+    <h1>Logos and Graphics</h1>
 
-    <div class="img-wrap">
-      <img src="Images/Bohlen.Riki_NFLPoster.png">
-    </div>
-
-    <div class="img-wrap">
-      <img src="Images/Bohlen.Riki_NFLPoster2.png">
-    </div>
-
-    <div class="img-wrap">
-      <img src="Images/Bohlen.Riki_NFLPoster.png">
-    </div>
+    <!-- Gallery injected by JS -->
+    <div class="gallery" id="gallery"></div>
   </main>
 </div>
 
-<!-- Lightbox Modal -->
+<!-- ===== Lightbox Modal ===== -->
 <div id="lightbox" class="lightbox">
   <span class="lightbox-close">&times;</span>
-  <img class="lightbox-img" src="">
+  <img class="lightbox-img" src="" alt="">
 </div>
 
-<!-- Lightbox Script -->
+<!-- ===== Gallery + Lightbox Script ===== -->
 <script>
+  const images = [
+    "Cupcake Logo.png",
+    "Billboard.png",
+    "Store Hours.png",
+    "Newspaper.png",
+    "front cover.png",
+    "FLOOF Logo 2",
+    "FLOOF Evergreen.png",
+    "Back.png",
+    "Picture2.png",
+    "Picture1(1).png",
+    "Bohlen.Riki_FBLALogo.png",
+    "Bohlen.Riki_NFLFootball.png",
+    "Cat Typography Poster"
+  ];
+
+  const gallery = document.getElementById("gallery");
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.querySelector(".lightbox-img");
   const closeBtn = document.querySelector(".lightbox-close");
 
-  document.querySelectorAll(".img-wrap img").forEach(img => {
-    img.addEventListener("click", () => {
-      lightboxImg.src = img.src;
-      lightbox.style.display = "flex";
-    });
+images.forEach(file => {
+  const wrap = document.createElement("div");
+  wrap.className = "img-wrap";
+
+  const img = document.createElement("img");
+  img.src = `Images/${file}`;
+  img.loading = "lazy";
+  img.alt = file.replace(/[-_]/g, " ").split(".")[0];
+
+  img.addEventListener("click", () => {
+    lightboxImg.src = img.src;
+    lightbox.style.display = "flex";
   });
+
+  wrap.appendChild(img);
+  gallery.appendChild(wrap);
+});
 
   closeBtn.addEventListener("click", () => {
     lightbox.style.display = "none";
   });
 
-  lightbox.addEventListener("click", (e) => {
+  lightbox.addEventListener("click", e => {
     if (e.target !== lightboxImg) {
       lightbox.style.display = "none";
     }
