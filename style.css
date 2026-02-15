@@ -76,13 +76,28 @@ p, span, li {
   min-height: 18px;
   max-width: 18px;
   max-height: 18px;
+  filter: invert(1);
 
   display: block;
   object-fit: contain;
 }
 
-.contact-list img {
-  filter: invert(1);
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1;
+}
+
+.contact-list a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+  opacity: 0.85;
 }
 
 /* ===== Image Card ===== */
